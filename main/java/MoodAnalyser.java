@@ -1,3 +1,6 @@
+import Exception.ExceptionTypeClass;
+import Exception.MoodAnalyserException;
+
 public class MoodAnalyser {
     private String message;
 
@@ -13,7 +16,7 @@ public class MoodAnalyser {
                 return "HAPPY";
 
         }catch (NullPointerException e){
-	        return "HAPPY";
+	        throw new MoodAnalyserException(ExceptionTypeClass.NULLEXCEPTION);
         }
     }
 }
