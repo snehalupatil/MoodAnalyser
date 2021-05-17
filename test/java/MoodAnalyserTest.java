@@ -41,6 +41,16 @@ public class MoodAnalyserTest {
            Assertions.assertEquals("Mood cannot be null", e.getNotice());
         }   
     }
+
+    @Test
+    public void givenEmptyMessage_WhenInCOnstructor_ThrowsEmptyException() {
+        try {
+            MoodAnalyser moodAnalyser = new MoodAnalyser("");
+            String mood = moodAnalyser.analyseMood();
+        } catch (MoodAnalyserException e){
+            Assertions.assertEquals("Mood cannot be empty", e.getNotice());
+        }
+    }
     
 }
 

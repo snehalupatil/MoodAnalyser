@@ -3,6 +3,7 @@ import Exception.MoodAnalyserException;
 
 public enum ExceptionTypeClass{
     NULLEXCEPTION("Mood cannot be null");
+    EMPTYEXCEPTION("Mood cannot be empty");
 
     private String notice;
 
