@@ -1,6 +1,6 @@
 
 import Exception.ExceptionTypeClass;
-import Exception.MoodAnalyzerException;
+import Exception.MoodAnalyserException;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,14 +8,15 @@ import org.junit.jupiter.api.Test;
 
 public class MoodAnalyserTest {
     @Test
-    public void givenMessage_Whensad_shouldReturnSad()  {
+    public void givenMessage_Whensad_shouldReturnSad() {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
         String mood = moodAnalyser.analyseMood("I am in sad mood");
 
         Assertions.assertEquals("SAD", mood);
     }
+
     @Test
-    public void givenMessage_Whensad_shouldReturnSad()  {
+    public void givenMessage_Whensad_shouldReturnSad() {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
         String mood = moodAnalyser.analyseMood("I am in Any Mood");
 
@@ -23,10 +24,20 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void givenMessage_Whensad_shouldReturnSad()  {
+    public void givenMessage_Whensad_shouldReturnSad() {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
         String mood = moodAnalyser.analyseMood("I an in Happy Mood");
 
         Assertions.assertEquals("HAPPY", mood);
+
+    }
+
+    @Test
+    public void givenNullMessage_WhenInCOnstructor_ThrowsCustomException() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String mood = moodAnalyser.analyseMood();
+
+        Assertions.assertEquals("Mood cannot be null", mood);
     }
 }
+
