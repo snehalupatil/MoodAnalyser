@@ -12,8 +12,7 @@ public class MoodAnalyser {
         try {
             if (message.contains("sad"))
                 return "SAD";
-            else if (message.contains(""))
-                throw new MoodAnalyserException(ExceptionTypeClass.EMPTYEXCEPTION);
+            
             else
                 return "HAPPY";
 
