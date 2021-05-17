@@ -34,10 +34,13 @@ public class MoodAnalyserTest {
 
     @Test
     public void givenNullMessage_WhenInCOnstructor_ThrowsCustomException() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        String mood = moodAnalyser.analyseMood();
-
-        Assertions.assertEquals("Mood cannot be null", mood);
+        try {
+            MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+            String mood = moodAnalyser.analyseMood();
+        } catch (MoodAnalyserException e){
+           Assertions.assertEquals("Mood cannot be null", e.getNotice());
+        }   
     }
+    
 }
 

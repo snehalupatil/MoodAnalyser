@@ -1,6 +1,20 @@
 import Exception.ExceptionTypeClass;
 import Exception.MoodAnalyserException;
 
+public enum ExceptionTypeClass{
+    NULLEXCEPTION("Mood cannot be null");
+
+    private String notice;
+
+    ExceptionTypeClass(String notice){
+        this.notice = notice;
+    }
+    public String getNotice(){
+        return this.notice;
+    }
+}
+
+
 public class MoodAnalyser {
     private String message;
 
@@ -12,7 +26,8 @@ public class MoodAnalyser {
         try {
             if (message.contains("sad"))
                 return "SAD";
-            
+            else if (message.contains(""))
+                throw new MoodAnalyserException(ExceptionTypeClass.EMPTYEXCEPTION);
             else
                 return "HAPPY";
 
